@@ -42,7 +42,7 @@ download_by_hash() {
     fi
     SHA256_COMMAND="sha256sum"
     if ! command -v $SHA256_COMMAND >/dev/null 2>&1; then
-        SHA256_COMMAND="sha256"
+        SHA256_COMMAND="shasum -a 256"
         if ! command -v $SHA256_COMMAND >/dev/null 2>&1; then
             set +x
             echo "error: Cannot find sha256(sum) command"
